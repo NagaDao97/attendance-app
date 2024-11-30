@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J&A Attendance Record</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Signup Page -->
+  <div id="signup" class="container">
+    <h1>J&A Attendance Record</h1>
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <select id="role" required>
+        <option value="manager">Manager</option>
+        <option value="user">User</option>
+      </select><br>
+      <input type="submit" value="Signup">
+    </form>
+  </div>
+
+  <!-- Login Page -->
+  <div id="login" class="container" style="display: none;">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="text" id="loginUsername" placeholder="Username" required><br>
+      <input type="password" id="loginPassword" placeholder="Password" required><br>
+      <input type="submit" value="Login">
+    </form>
+    <button onclick="goBack()">Go Back</button> <!-- Go Back Button -->
+  </div>
+
+  <!-- Manager Dashboard -->
+  <div id="managerDashboard" class="container" style="display: none;">
+    <h1>Manager Dashboard</h1>
+    <div id="managerDuration"></div>
+    <ul id="userList"></ul>
+    <div id="attendanceRecords">
+      <h2>Attendance Records</h2>
+      <ul id="attendanceList"></ul>
+    </div>
+    <button onclick="logout()">Logout</button>
+    <button onclick="goBackToSignup()">Go Back to Signup Page</button> <!-- Go Back to Signup Button -->
+  </div>
+
+  <!-- Attendance Page (User) -->
+  <div id="attendance" class="container" style="display: none;">
+    <h1>Attendance Page</h1>
+    <button id="markAttendanceBtn" onclick="markAttendance()">Mark Attendance</button>
+    <div id="userDuration"></div>
+    <button onclick="logout()">Logout</button>
+    <button onclick="goBackToSignup()">Go Back to Signup Page</button> <!-- Go Back to Signup Button -->
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
